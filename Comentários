@@ -1,3 +1,27 @@
 DB design
 
 https://erd.dbdesigner.net/designer/schema/guest_template
+
+
+-----RF
+
+
+
+
+----RNF
+
+
+
+----RN
+----------------------------------
+#PROJETOS (TIPOS)
+-TECNICO(NEGOCIO)
+-LOGICO(APP VISÃO USARIO)
+-FISICO(APP VISÃO TIME DEV)
+----------------------------------
+#MODELOS DESING DOMINIO
+-CONCEITUAL(MER)
+-LOGICO(DER)
+-DDL (SCRIPT)
+----------------------------------
+MODELOS DENTRO DE PROJETOS
