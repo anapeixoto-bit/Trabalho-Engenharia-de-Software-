@@ -29,3 +29,34 @@ MODELOS DENTRO DE PROJETOS
 Sistema para academia ginastica
 
 
+Levantemendo de Requisitos
+
+Regras de Negocio
+Código	 Regra de negócio
+RN01	   Controle de funcionários: O sistema deve manter o cadastro dos funcionários da academia e suas respectivas funções.
+RN02	   Registro de frequência: O sistema deve permitir registrar a presença e a ausência dos alunos nas atividades.
+RN03	   Instrutor por turma: Cada turma deve possuir um instrutor responsável por orientar os alunos.
+RN04	   Monitor por turma: Cada turma deve possuir um monitor responsável por auxiliar nas atividades e acompanhar os alunos.
+
+Requisitos Funcionais
+Os requisitos funcionais descrevem o que o sistema deve fazer.
+
+Código	Requisito funcional
+RF01	  Cadastro de turmas: O sistema deve permitir criar e organizar turmas de ginástica.
+RF02	  Cadastro de instrutores: O sistema deve permitir cadastrar instrutores responsáveis pelas atividades.
+RF03	  Cadastro de alunos: O sistema deve permitir cadastrar alunos com suas informações pessoais.
+RF04	  Cadastro de atividades: O sistema deve permitir cadastrar as atividades oferecidas pela academia, como musculação, dança e ginástica.
+RF05	  Datas das atividades: O sistema deve permitir definir os dias em que cada atividade será realizada.
+RF06	  Horários das atividades: O sistema deve permitir definir os horários de início e término das atividades.
+RF07	  Participação em várias turmas: O sistema deve permitir que um aluno participe de mais de uma turma.
+
+Requisitos Não Funcionais
+Os requisitos não funcionais descrevem como o sistema deve funcionar, considerando segurança, acesso e proteção das informações.
+
+Código	Requisito não funcional
+RNF01	  Login e senha: O sistema deve exigir login e senha para que os usuários possam acessar suas funcionalidades.
+RNF02	  Proteção de dados: O sistema deve proteger as informações pessoais dos alunos, evitando acessos não autorizados.
+RNF03	  Controle de acesso: O sistema deve permitir que cada usuário acesse somente as funcionalidades autorizadas para seu perfil.
+RNF04	  Perfis de usuário: O sistema deve permitir o acesso de instrutores e funcionários da academia, conforme suas responsabilidades.
+
+Diagrama de Fluxo de Dados
