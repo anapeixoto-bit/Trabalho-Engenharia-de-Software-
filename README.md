@@ -80,42 +80,16 @@ Uma academia de ginástica deseja desenvolver um sistema para controlar o seu fu
 
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
 
-### 2.5.1 Lista de eventos
+[![Modelo Fluxo de Dadosl](img/conceitual.png)](img/conceitual.png)
 
-|Nº|Evento|Processo (resposta do sistema)|Lê|Grava|
-|-|-|-|-|-|
-|E1|A administração cadastra uma atividade|**1** Cadastrar atividade|—|D1|
-|E2|A administração cadastra um instrutor|**2** Cadastrar instrutor|—|D2|
-|E3|Um aluno é cadastrado|**3** Cadastrar aluno|—|D3|
-|E4|A administração cria uma turma|**4** Cadastrar turma|D1, D2, D3|D4|
-|E5|A administração substitui o instrutor ou o monitor de uma turma|**5** Substituir instrutor ou monitor|D2, D3, D4|D4|
-|E6|O aluno solicita matrícula em uma turma|**6** Matricular aluno em turma|D3, D4|D5|
-|E7|O instrutor registra a ausência de um aluno|**7** Registrar ausência|D5|D6|
-|E8|Instrutor ou administração consulta turmas e ausências|**8** Consultar turmas e ausências|D3, D4, D5, D6|—|
 
-**Depósitos de dados:** D1 ATIVIDADE · D2 INSTRUTOR (inclui telefones) · D3 ALUNO · D4 TURMA · D5 MATRÍCULA\_TURMA · D6 AUSÊNCIA
+## 3. Modelagem de dados (apoio)
 
-> O login/senha (RNF01) e o controle de acesso (RNF03) atravessam todos os processos e não foram desenhados como processo próprio, por serem requisitos não funcionais.
+### Modelo conceitual
+[![Modelo conceitual](img/conceitual.png)](img/conceitual.png)
 
-!\[DFD de contexto](img/dfd\_contexto.png)
+### Modelo lógico
+[![Modelo lógico](img/logico.png)](img/logico.png)
 
-### 2.5.2 DFD Nível  — Orientado a eventos (um processo por evento)
-
-!\[DFD nível 1 por eventos](img/dfd\_nivel1\_eventos.png)
-
-Arquivos editáveis (draw.io): `dfd\_contexto.drawio` e `dfd\_nivel1\_eventos.drawio`.
-
-\---
-
-## 3\. Modelagem de dados (apoio)
-
-|Modelo|Arquivo|Imagem|
-|-|-|-|
-|Conceitual (DER, notação de Chen, cardinalidades mín/máx)|`modelo\_conceitual.drawio`|`img/conceitual.png`|
-|Lógico (tabelas, PK/FK)|`modelo\_logico.drawio`|`img/logico.png`|
-|Físico (tipos e restrições)|`modelo\_fisico.drawio` + `modelo\_fisico.sql`|`img/fisico.png`|
-
-!\[Modelo conceitual](img/conceitual.png)
-!\[Modelo lógico](img/logico.png)
-!\[Modelo físico](img/fisico.png)
-
+### Modelo físico
+[![Modelo físico](img/fisico.png)](img/fisico.png)
