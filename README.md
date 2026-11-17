@@ -79,21 +79,18 @@ Uma academia de ginástica deseja desenvolver um sistema para controlar o seu fu
 \---
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
 
-![Modelo Fluxo de Dados](modelos/Diagramas_de_Fluxo_de_Dados.png)
+* [Clique aqui para visualizar o Diagrama de Fluxo de Dados (DFD)](modelos/Diagramas_de_Fluxo_de_Dados.png)
 
 ---
 
 ## 3. Modelagem de dados (apoio)
 
-### Modelo conceitual
-*(Nota: O arquivo do modelo conceitual ainda não foi enviado para a pasta `modelos` no repositório. Assim que você fizer o upload dele, ajuste o nome abaixo caso seja diferente).*
-![Modelo conceitual](modelos/modelo_conceitual.png)
+* [Acessar a pasta completa de Modelos](modelos/)
 
-### Modelo lógico
-![Modelo lógico](modelos/modelo_logico.png)
+Ou, se preferir links individuais para cada diagrama:
 
-### Modelo físico
-![Modelo físico](modelos/modelo_fisico.png)
+* [Visualizar Modelo Lógico](modelos/modelo_logico.png)
+* [Visualizar Modelo Físico](modelos/modelo_fisico.png)
 
 ---
 
