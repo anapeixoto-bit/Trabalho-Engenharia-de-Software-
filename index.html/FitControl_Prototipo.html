@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitControl | Protótipo de Gestão de Academia</title>
+<style>
+:root{--navy:#142d36;--green:#159b70;--mint:#e9f7f1;--bg:#f4f7f8;--ink:#20343b;--muted:#71828a;--line:#e3eaec;--white:#fff;--red:#c84d4d;--amber:#a56a12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink)}
+.app{display:flex;min-height:100vh}.sidebar{width:245px;background:var(--navy);color:#fff;padding:24px 16px;display:flex;flex-direction:column;flex-shrink:0}
+.brand{display:flex;gap:12px;align-items:center;padding:0 8px 28px}.logo{width:42px;height:42px;border-radius:13px;background:var(--green);display:grid;place-items:center;font-size:22px}.brand strong{font-size:19px;letter-spacing:.2px}.brand small{display:block;color:#b8cbc9;font-size:11px}
+.navlabel{color:#8fa9a8;font-size:10px;font-weight:700;letter-spacing:1.2px;padding:8px 12px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#d6e3e1;text-align:left;padding:11px 12px;border-radius:9px;cursor:pointer;font:inherit;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:#244650;color:#fff}.nav button.active{box-shadow:inset 3px 0 var(--green)}.nav .ico{width:20px;text-align:center;font-size:16px}.sidefoot{margin-top:auto;color:#9bb2b0;font-size:11px;padding:18px 10px 4px}
+main{flex:1;min-width:0}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px}.crumb{color:var(--muted);font-size:12px}.user{display:flex;align-items:center;gap:10px}.avatar{width:34px;height:34px;border-radius:50%;background:#dff2e9;color:#167451;display:grid;place-items:center;font-weight:700}.content{padding:30px 32px;max-width:1400px;margin:auto}.pagehead{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:24px}.pagehead h1{margin:0 0 5px;font-size:25px}.sub{color:var(--muted);margin:0}.btn{border:0;border-radius:9px;padding:10px 15px;background:var(--green);color:#fff;font-weight:650;cursor:pointer}.btn:hover{filter:brightness(.95)}.btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.danger{background:#fff0f0;color:var(--red);border:1px solid #f4dada}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:13px;padding:19px}.stat{display:flex;justify-content:space-between;align-items:center}.stat .symbol{width:40px;height:40px;border-radius:11px;background:var(--mint);display:grid;place-items:center;font-size:19px}.stat strong{display:block;font-size:27px;margin:13px 0 2px}.muted{color:var(--muted);font-size:12px}.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}.panel h2{font-size:16px;margin:0 0 16px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:var(--muted);font-size:11px;font-weight:650;padding:11px 10px;border-bottom:1px solid var(--line)}td{padding:13px 10px;border-bottom:1px solid #eff2f3;font-size:13px}tr:last-child td{border-bottom:0}.pill{display:inline-block;border-radius:20px;padding:4px 9px;background:var(--mint);color:#13734f;font-size:11px;font-weight:650}.pill.gray{background:#f0f3f4;color:#68777c}.pill.warn{background:#fff5e4;color:var(--amber)}.searchrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.search{border:1px solid var(--line);border-radius:9px;padding:10px 12px;min-width:220px;background:#fff;font:inherit}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:650;color:#50636a}.field input,.field select,.field textarea{width:100%;border:1px solid #dce5e7;border-radius:8px;padding:10px 11px;font:inherit;background:#fff;color:var(--ink)}.formactions{display:flex;gap:9px;justify-content:flex-end;margin-top:18px}.empty{padding:28px;text-align:center;color:var(--muted)}.notice{padding:12px 14px;border-radius:9px;background:#f0f8f4;color:#226b50;margin-bottom:16px;font-size:13px}.bar{height:9px;border-radius:10px;background:#edf1f2;overflow:hidden}.bar span{display:block;height:100%;background:var(--green);border-radius:10px}.schedule{display:grid;gap:10px}.classrow{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;justify-content:space-between;gap:10px}.classrow strong{display:block}.classrow small{color:var(--muted)}.hidden{display:none!important}.modalback{position:fixed;inset:0;background:#142d3677;display:grid;place-items:center;padding:20px;z-index:5}.modal{background:white;border-radius:15px;padding:24px;width:min(680px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #0002}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modalhead h2{margin:0}.close{border:0;background:#f1f4f5;border-radius:8px;padding:7px 11px;cursor:pointer}.toast{position:fixed;right:22px;bottom:22px;background:#183b34;color:#fff;padding:12px 17px;border-radius:10px;box-shadow:0 8px 30px #0002;display:none;z-index:9}
+@media(max-width:900px){.sidebar{width:205px}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.content{padding:22px 18px}.topbar{padding:0 18px}}
+@media(max-width:650px){.app{display:block}.sidebar{width:100%;padding:13px}.brand{padding:0 6px 12px}.nav{display:flex;overflow:auto}.navlabel,.sidefoot{display:none}.nav button{white-space:nowrap;padding:9px}.topbar{height:54px}.cards{gap:9px}.card{padding:13px}.pagehead{display:block}.pagehead .btn{margin-top:12px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style></head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">🏋</div><div><strong>FitControl</strong><small>Gestão inteligente de academia</small></div></div>
+ <div class="navlabel">MENU PRINCIPAL</div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+  <button data-page="alunos"><span class="ico">♙</span>Alunos</button>
+  <button data-page="instrutores"><span class="ico">♟</span>Instrutores</button>
+  <button data-page="atividades"><span class="ico">✳</span>Atividades</button>
+  <button data-page="turmas"><span class="ico">▣</span>Turmas</button>
+  <button data-page="matriculas"><span class="ico">↗</span>Matrículas</button>
+  <button data-page="frequencia"><span class="ico">✓</span>Frequência</button>
+  <button data-page="relatorios"><span class="ico">▤</span>Relatórios</button>
+ </nav>
+ <div class="sidefoot">Protótipo acadêmico • Dados fictícios<br>Versão demonstrativa 1.0</div>
+</aside>
+<main><header class="topbar"><div class="crumb">Academia FitControl / <b id="crumb">Dashboard</b></div><div class="user"><span class="muted">Administrador</span><div class="avatar">AD</div></div></header><div class="content" id="view"></div></main>
+</div>
+<div class="modalback hidden" id="modalback"><div class="modal"><div class="modalhead"><h2 id="modalTitle">Cadastro</h2><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const db={
+ alunos:[
+ {id:"FC001",nome:"João Santos",data:"12/03/2026",telefone:"(71) 99911-2233",nasc:"14/05/2001",endereco:"Rua das Flores, 120",altura:"1,75",peso:"75",status:"Ativo"},
+ {id:"FC002",nome:"Maria Oliveira",data:"18/03/2026",telefone:"(71) 98822-3344",nasc:"22/08/1998",endereco:"Av. Central, 45",altura:"1,62",peso:"61",status:"Ativo"},
+ {id:"FC003",nome:"Pedro Costa",data:"02/04/2026",telefone:"(71) 97733-4455",nasc:"09/11/2000",endereco:"Rua A, 90",altura:"1,80",peso:"82",status:"Ativo"}
+ ],
+ instrutores:[
+ {nome:"Carlos Silva",rg:"12.345.678-9",nasc:"10/02/1988",titulacao:"Educação Física",telefone:"(71) 99900-1100"},
+ {nome:"Ana Souza",rg:"23.456.789-0",nasc:"21/07/1991",titulacao:"Fisioterapia / Pilates",telefone:"(71) 98800-2200"}
+ ],
+ atividades:["Musculação","Pilates","Natação","Funcional","Spinning"],
+ turmas:[
+ {nome:"Musculação - Manhã",atividade:"Musculação",quantidade:20,horario:"08:00–09:00",duracao:"60 min",inicio:"01/09/2026",fim:"30/12/2026",instrutor:"Carlos Silva",monitor:"João Santos"},
+ {nome:"Pilates - Tarde",atividade:"Pilates",quantidade:12,horario:"14:00–15:00",duracao:"60 min",inicio:"01/09/2026",fim:"30/12/2026",instrutor:"Ana Souza",monitor:"Maria Oliveira"},
+ {nome:"Funcional - Noite",atividade:"Funcional",quantidade:15,horario:"18:00–19:00",duracao:"60 min",inicio:"01/09/2026",fim:"30/12/2026",instrutor:"Carlos Silva",monitor:"Pedro Costa"}
+ ],
+ matriculas:[
+ {aluno:"João Santos",turma:"Musculação - Manhã",data:"12/03/2026"},
+ {aluno:"Maria Oliveira",turma:"Pilates - Tarde",data:"18/03/2026"},
+ {aluno:"Pedro Costa",turma:"Funcional - Noite",data:"02/04/2026"},
+ {aluno:"João Santos",turma:"Funcional - Noite",data:"05/04/2026"}
+ ],
+ frequencia:[
+ {aluno:"João Santos",turma:"Musculação - Manhã",data:"16/11/2026",status:"Presente"},
+ {aluno:"Maria Oliveira",turma:"Pilates - Tarde",data:"16/11/2026",status:"Ausente"},
+ {aluno:"Pedro Costa",turma:"Funcional - Noite",data:"16/11/2026",status:"Presente"}
+ ]
+};
+let page="dashboard";
+const titles={dashboard:"Dashboard",alunos:"Alunos",instrutores:"Instrutores",atividades:"Atividades",turmas:"Turmas",matriculas:"Matrículas",frequencia:"Frequência",relatorios:"Relatórios"};
+function go(p){page=p;document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));document.getElementById('crumb').textContent=titles[p];render()}
+document.getElementById('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-page]');if(b)go(b.dataset.page)});
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2600)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function table(headers,rows){return `<div class="tablewrap"><table><thead><tr>${headers.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.join(''):`<tr><td colspan="${headers.length}" class="empty">Nenhum registro encontrado.</td></tr>`}</tbody></table></div>`}
+function stat(icon,n,label,desc){return `<div class="card"><div class="stat"><span class="muted">${label}</span><span class="symbol">${icon}</span></div><strong>${n}</strong><span class="muted">${desc}</span></div>`}
+function render(){
+let v=document.getElementById('view');
+if(page==='dashboard'){
+v.innerHTML=`<div class="pagehead"><div><h1>Visão geral</h1><p class="sub">Acompanhe os principais indicadores da academia.</p></div><button class="btn" onclick="go('alunos')">＋ Novo aluno</button></div>
+<div class="cards">${stat('♙',db.alunos.length,'Alunos cadastrados','Cadastros de demonstração')}${stat('▣',db.turmas.length,'Turmas ativas','Modalidades em andamento')}${stat('♟',db.instrutores.length,'Instrutores','Profissionais cadastrados')}${stat('✓','85%','Frequência média','Indicador ilustrativo')}</div>
+<div class="grid2"><section class="panel"><h2>Próximas atividades</h2><div class="schedule">${db.turmas.map(t=>`<div class="classrow"><div><strong>${esc(t.atividade)}</strong><small>${esc(t.instrutor)} • ${esc(t.nome)}</small></div><span class="pill">${esc(t.horario)}</span></div>`).join('')}</div></section>
+<section class="panel"><h2>Resumo da academia</h2><p class="muted">Ocupação ilustrativa das turmas</p>${db.turmas.map(t=>`<p style="display:flex;justify-content:space-between;margin:14px 0 6px"><b>${esc(t.nome)}</b><span class="muted">${t.quantidade} alunos</span></p><div class="bar"><span style="width:${Math.min(t.quantidade/25*100,100)}%"></span></div>`).join('')}<p class="muted" style="margin-top:18px">Os números são exemplos para apresentação do protótipo.</p></section></div>`;
+}
+if(page==='alunos'){
+v.innerHTML=`<div class="pagehead"><div><h1>Alunos</h1><p class="sub">Cadastre e consulte os dados dos alunos.</p></div><button class="btn" onclick="openForm('aluno')">＋ Cadastrar aluno</button></div><div class="panel"><div class="searchrow"><input class="search" placeholder="Buscar por nome ou matrícula..." oninput="filterTable(this, 'alunosTable')"></div><div id="alunosTable">${table(['Matrícula','Nome','Telefone','Data de matrícula','Status','Ação'],db.alunos.map((a,i)=>`<tr><td>${esc(a.id)}</td><td><b>${esc(a.nome)}</b></td><td>${esc(a.telefone)}</td><td>${esc(a.data)}</td><td><span class="pill">${a.status}</span></td><td><button class="btn secondary" onclick="details('aluno',${i})">Ver detalhes</button></td></tr>`))}</div></div>`;
+}
+if(page==='instrutores'){
+v.innerHTML=`<div class="pagehead"><div><h1>Instrutores</h1><p class="sub">Gerencie os profissionais responsáveis pelas turmas.</p></div><button class="btn" onclick="openForm('instrutor')">＋ Cadastrar instrutor</button></div><div class="panel">${table(['Nome','RG','Titulação','Telefone','Turmas orientadas'],db.instrutores.map(i=>`<tr><td><b>${esc(i.nome)}</b></td><td>${esc(i.rg)}</td><td>${esc(i.titulacao)}</td><td>${esc(i.telefone)}</td><td>${db.turmas.filter(t=>t.instrutor===i.nome).length}</td></tr>`))}</div>`;
+}
+if(page==='atividades'){
+v.innerHTML=`<div class="pagehead"><div><h1>Atividades</h1><p class="sub">Modalidades oferecidas pela academia.</p></div><button class="btn" onclick="openForm('atividade')">＋ Nova atividade</button></div><div class="cards">${db.atividades.map(a=>`<div class="card"><div class="symbol">✳</div><h3>${esc(a)}</h3><span class="muted">${db.turmas.filter(t=>t.atividade===a).length} turma(s) vinculada(s)</span></div>`).join('')}</div>`;
+}
+if(page==='turmas'){
+v.innerHTML=`<div class="pagehead"><div><h1>Turmas</h1><p class="sub">Organize horários, atividades, instrutores e monitores.</p></div><button class="btn" onclick="openForm('turma')">＋ Cadastrar turma</button></div><div class="panel">${table(['Turma / atividade','Alunos','Horário','Duração','Instrutor','Aluno monitor','Período'],db.turmas.map(t=>`<tr><td><b>${esc(t.nome)}</b><br><span class="muted">${esc(t.atividade)}</span></td><td>${t.quantidade}</td><td>${esc(t.horario)}</td><td>${esc(t.duracao)}</td><td>${esc(t.instrutor)}</td><td>${esc(t.monitor)}</td><td>${esc(t.inicio)} a ${esc(t.fim)}</td></tr>`))}</div>`;
+}
+if(page==='matriculas'){
+v.innerHTML=`<div class="pagehead"><div><h1>Matrículas</h1><p class="sub">Um aluno pode participar de mais de uma turma.</p></div><button class="btn" onclick="openForm('matricula')">＋ Nova matrícula</button></div><div class="panel">${table(['Aluno','Turma','Data da matrícula','Situação'],db.matriculas.map(m=>`<tr><td><b>${esc(m.aluno)}</b></td><td>${esc(m.turma)}</td><td>${esc(m.data)}</td><td><span class="pill">Ativa</span></td></tr>`))}</div>`;
+}
+if(page==='frequencia'){
+v.innerHTML=`<div class="pagehead"><div><h1>Frequência</h1><p class="sub">Registre presenças e ausências por matrícula e turma.</p></div><button class="btn" onclick="openForm('frequencia')">＋ Registrar frequência</button></div><div class="notice">A ausência é registrada para a matrícula do aluno em uma turma específica.</div><div class="panel">${table(['Data','Aluno','Turma','Registro'],db.frequencia.map(f=>`<tr><td>${esc(f.data)}</td><td><b>${esc(f.aluno)}</b></td><td>${esc(f.turma)}</td><td><span class="pill ${f.status==='Ausente'?'warn':''}">${f.status}</span></td></tr>`))}</div>`;
+}
+if(page==='relatorios'){
+let aus=db.frequencia.filter(f=>f.status==='Ausente').length;
+v.innerHTML=`<div class="pagehead"><div><h1>Relatórios</h1><p class="sub">Consultas resumidas para acompanhamento da academia.</p></div><button class="btn secondary" onclick="window.print()">Imprimir / salvar PDF</button></div><div class="cards">${stat('♙',db.alunos.length,'Alunos','Total cadastrado')}${stat('▣',db.turmas.length,'Turmas','Total cadastrado')}${stat('✓',db.frequencia.length-aus,'Presenças','Registros de exemplo')}${stat('!',aus,'Ausências','Registros de exemplo')}</div><div class="grid2"><div class="panel"><h2>Relatório de alunos</h2>${table(['Aluno','Matrículas'],db.alunos.map(a=>`<tr><td>${esc(a.nome)}</td><td>${db.matriculas.filter(m=>m.aluno===a.nome).length}</td></tr>`))}</div><div class="panel"><h2>Relatório de turmas</h2>${table(['Turma','Instrutor','Vagas / alunos'],db.turmas.map(t=>`<tr><td>${esc(t.nome)}</td><td>${esc(t.instrutor)}</td><td>${t.quantidade}</td></tr>`))}</div></div>`;
+}
+}
+function filterTable(input,id){let q=input.value.toLowerCase();document.querySelectorAll('#'+id+' tbody tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q)?'':'none')}
+function openModal(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modalback').classList.remove('hidden')}
+function closeModal(){document.getElementById('modalback').classList.add('hidden')}
+function field(label,name,type='text',extra=''){return `<div class="field"><label>${label}</label><input name="${name}" type="${type}" ${extra} required></div>`}
+function selectField(label,name,options){return `<div class="field"><label>${label}</label><select name="${name}" required>${options.map(o=>`<option>${esc(o)}</option>`).join('')}</select></div>`}
+function formWrap(fields,submit){return `<form onsubmit="${submit};return false"><div class="formgrid">${fields}</div><div class="formactions"><button type="button" class="btn secondary" onclick="closeModal()">Cancelar</button><button class="btn" type="submit">Salvar cadastro</button></div></form>`}
+function openForm(type){
+if(type==='aluno')openModal('Cadastrar aluno',formWrap(field('Código de matrícula','id')+field('Nome completo','nome')+field('Data de matrícula','data')+field('Data de nascimento','nasc','date')+field('Telefone','telefone')+field('Endereço','endereco')+field('Altura (m)','altura')+field('Peso (kg)','peso'),'saveAluno(this)'));
+if(type==='instrutor')openModal('Cadastrar instrutor',formWrap(field('Nome completo','nome')+field('RG','rg')+field('Data de nascimento','nasc','date')+field('Titulação','titulacao')+field('Telefone para contato','telefone'),'saveInstrutor(this)'));
+if(type==='atividade')openModal('Nova atividade',formWrap(field('Nome da atividade','nome'),'saveAtividade(this)'));
+if(type==='turma')openModal('Cadastrar turma',formWrap(field('Identificação da turma','nome')+selectField('Tipo de atividade','atividade',db.atividades)+field('Número de alunos','quantidade','number')+field('Horário (ex.: 08:00–09:00)','horario')+field('Duração','duracao')+field('Data de início','inicio','date')+field('Data de término','fim','date')+selectField('Instrutor responsável','instrutor',db.instrutores.map(x=>x.nome))+selectField('Aluno monitor','monitor',db.alunos.map(x=>x.nome)),'saveTurma(this)'));
+if(type==='matricula')openModal('Nova matrícula',formWrap(selectField('Aluno','aluno',db.alunos.map(x=>x.nome))+selectField('Turma','turma',db.turmas.map(x=>x.nome))+field('Data da matrícula','data','date'),'saveMatricula(this)'));
+if(type==='frequencia')openModal('Registrar frequência',formWrap(selectField('Aluno','aluno',db.alunos.map(x=>x.nome))+selectField('Turma','turma',db.turmas.map(x=>x.nome))+field('Data da aula','data','date')+selectField('Situação','status',['Presente','Ausente']),'saveFrequencia(this)'));
+}
+function data(form){return Object.fromEntries(new FormData(form).entries())}
+function saveAluno(f){let d=data(f);db.alunos.push({...d,status:'Ativo'});closeModal();render();toast('Aluno cadastrado no protótipo.')}
+function saveInstrutor(f){db.instrutores.push(data(f));closeModal();render();toast('Instrutor cadastrado no protótipo.')}
+function saveAtividade(f){let n=data(f).nome;if(db.atividades.includes(n)){toast('Essa atividade já existe.');return}db.atividades.push(n);closeModal();render();toast('Atividade adicionada.')}
+function saveTurma(f){let d=data(f);d.quantidade=Number(d.quantidade);db.turmas.push(d);closeModal();render();toast('Turma cadastrada no protótipo.')}
+function saveMatricula(f){let d=data(f);if(db.matriculas.some(m=>m.aluno===d.aluno&&m.turma===d.turma)){toast('Aluno já matriculado nessa turma.');return}db.matriculas.push(d);closeModal();render();toast('Matrícula registrada.')}
+function saveFrequencia(f){let d=data(f);db.frequencia.push(d);closeModal();render();toast('Frequência registrada.')}
+function details(type,i){let a=db.alunos[i];openModal('Detalhes do aluno',`<div class="formgrid">${Object.entries({'Matrícula':a.id,'Nome':a.nome,'Data de matrícula':a.data,'Nascimento':a.nasc,'Telefone':a.telefone,'Endereço':a.endereco,'Altura':a.altura+' m','Peso':a.peso+' kg'}).map(([k,v])=>`<div><span class="muted">${k}</span><p><b>${esc(v)}</b></p></div>`).join('')}</div><button class="btn secondary" onclick="closeModal()">Fechar</button>`)}
+render();
+</script></body></html>
