@@ -80,7 +80,8 @@ Uma academia de ginástica deseja desenvolver um sistema para controlar o seu fu
 
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
 
-[![Modelo Fluxo de Dadosl]](img/Diagramas_de _Fluxo_de _Dados.png)
+![Modelo Fluxo de Dados](modelos/Diagramas_de_Fluxo_de_Dados.png)
+
 
 
 ## 3. Modelagem de dados (apoio)
