@@ -1,0 +1,11 @@
+## 4. Prototipagem de Telas (HTML)
+
+Você pode visualizar as telas estáticas no navegar pela versão interativa diretamente no seu navegador.
+
+### Como acessar o protótipo interativo na sua máquina:
+
+1. **Baixe o projeto:** No topo desta página, clique no botão verde **`<> Code`** e selecione **`Download ZIP`** (ou clone o repositório usando `git clone`).
+2. **Extraia os arquivos:** Descompacte a pasta baixada no seu computador.
+3. **Abra no navegador:** Acesse a pasta, localize o arquivo HTML (ex: `FitControl_Prototipo.html`) e dê um **duplo clique** nele para abrir no seu navegador padrão (Chrome, Edge, Firefox, etc.).
+
+
