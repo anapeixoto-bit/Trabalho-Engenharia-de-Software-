@@ -77,20 +77,45 @@ Uma academia de ginástica deseja desenvolver um sistema para controlar o seu fu
 |RNF06|**Disponibilidade e backup:** o sistema deve possuir cópia de segurança periódica dos dados. *(sugestão)*|
 
 \---
-
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
 
 ![Modelo Fluxo de Dados](modelos/Diagramas_de_Fluxo_de_Dados.png)
 
-
+---
 
 ## 3. Modelagem de dados (apoio)
 
 ### Modelo conceitual
-[![Modelo conceitual](img/conceitual.png)
+*(Nota: O arquivo do modelo conceitual ainda não foi enviado para a pasta `modelos` no repositório. Assim que você fizer o upload dele, ajuste o nome abaixo caso seja diferente).*
+![Modelo conceitual](modelos/modelo_conceitual.png)
 
 ### Modelo lógico
-[![Modelo lógico](img/logico.png)](img/logico.png)
+![Modelo lógico](modelos/modelo_logico.png)
 
 ### Modelo físico
-[![Modelo físico](img/fisico.png)](img/fisico.png)
+![Modelo físico](modelos/modelo_fisico.png)
+
+---
+
+## 4. Prototipagem de Telas
+
+### Alunos
+![Tela de Alunos](prototipagem/Alunos.png)
+
+### Atividades
+![Tela de Atividades](prototipagem/Atividades.png)
+
+### Frequência
+![Tela de Frequência](prototipagem/Frequencia.png)
+
+### Instrutores
+![Tela de Instrutores](prototipagem/Instrutores.png)
+
+### Matrículas
+![Tela de Matrículas](prototipagem/Matriculas.png)
+
+### Relatórios
+![Tela de Relatórios](prototipagem/Relatorios.png)
+
+### Turmas
+![Tela de Turmas](prototipagem/Turmas.png)
