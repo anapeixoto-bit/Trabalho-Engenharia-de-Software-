@@ -1,4 +1,4 @@
-# Sistema para Academia de Ginástica
+# Sistema para Academia 
 
 **Disciplina:** Engenharia de Software — Atividade Formativa
 **Conteúdo:** levantamento de requisitos (RF, RN, RNF) e DFDs orientados a eventos, mais a modelagem de dados de apoio.
