@@ -80,13 +80,13 @@ Uma academia de ginástica deseja desenvolver um sistema para controlar o seu fu
 
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
 
-[![Modelo Fluxo de Dadosl](img/modelo_conceitual.png)](img/conceitual.png)
+[![Modelo Fluxo de Dadosl]](img/Diagramas_de _Fluxo_de _Dados.png)
 
 
 ## 3. Modelagem de dados (apoio)
 
 ### Modelo conceitual
-[![Modelo conceitual](img/conceitual.png)](img/conceitual.png)
+[![Modelo conceitual](img/conceitual.png)
 
 ### Modelo lógico
 [![Modelo lógico](img/logico.png)](img/logico.png)
