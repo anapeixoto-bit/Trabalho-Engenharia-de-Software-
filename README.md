@@ -73,9 +73,9 @@ e os instrutores no gerenciamento das atividades oferecidas, das turmas e dos al
 |RNF01|**Autenticação:** o sistema deve exigir login e senha; as senhas devem ser armazenadas de forma criptografada (hash).|
 |RNF02|**Proteção de dados:** o sistema deve proteger os dados pessoais dos alunos (incluindo altura e peso) contra acesso não autorizado, conforme a LGPD (Lei nº 13.709/2018).|
 |RNF03|**Controle de acesso por perfil:** cada usuário só acessa as funcionalidades autorizadas ao seu perfil (Administração: todos os cadastros; Instrutor: consulta de turmas e registro de ausências).|
-|RNF04|**Integridade dos dados:** o sistema deve garantir, no banco de dados, as chaves, restrições de unicidade e regras de integridade referencial (ver `modelo\_fisico.sql`).|
+|RNF04|**Integridade dos dados:** o sistema deve garantir, no banco de dados, as chaves, restrições de unicidade e regras de integridade referencial.|
 |RNF05|**Usabilidade:** as telas de cadastro e de registro de ausência devem ser simples o bastante para uso sem treinamento prolongado. *(sugestão)*|
-|RNF06|**Disponibilidade e backup:** o sistema deve possuir cópia de segurança periódica dos dados. *(sugestão)*|
+|RNF06|**Disponibilidade e backup:** o sistema deve possuir cópia de segurança periódica dos dados. *|
 
 \---
 ## 2.5 Diagramas de Fluxo de Dados (DFD) orientados a eventos
