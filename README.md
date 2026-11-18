@@ -7,7 +7,8 @@
 
 ## 1\. Cenário e escopo
 
-Uma academia de ginástica deseja desenvolver um sistema para controlar o seu funcionamento.
+Uma academia de ginástica deseja informatizar o controle de seu funcionamento. O sistema deverá apoiar a administração 
+e os instrutores no gerenciamento das atividades oferecidas, das turmas e dos alunos matriculados.
 
 * Os alunos são organizados em **turmas**; cada turma está associada a **um tipo específico de atividade** (ex.: musculação, dança, ginástica).
 * Cada turma é orientada por **um único instrutor** e possui **um aluno monitor**, que auxilia o instrutor durante as atividades.
